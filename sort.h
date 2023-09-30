@@ -20,6 +20,7 @@
 		array[a] = array[b];  \
 		array[b] = tmp;       \
 	}
+#endif
 
 /**
  * struct listint_s - Doubly linked list node
