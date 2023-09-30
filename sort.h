@@ -1,6 +1,26 @@
 #ifndef _SORT_H_
 #define _SORT_H_
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0
+#endif
+#ifndef UNDEF
+#define UNDEF -1
+#endif
+#ifndef SWAP
+#define SWAP(array, a, b) \
+	{                       \
+		tmp = array[a];       \
+		array[a] = array[b];  \
+		array[b] = tmp;       \
+	}
+
 /**
  * struct listint_s - Doubly linked list node
  * 
@@ -28,6 +48,19 @@ void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
+void swap_items(int *array, size_t l, size_t r);
+void swap_nodes(listint_t **list, listint_t *l, listint_t *r);
+void insertion_sort_list2(listint_t **list);
+void quick_sort_range_lomuto(int *array, size_t low, size_t high, size_t size);
+listint_t *get_tail(listint_t **list);
+void top_down_merge(int *array, int *array_c, size_t l, size_t m, size_t r);
+void split_merge(int *array, int *array_c, size_t size, size_t l, size_t r);
+void sift_down(int *array, int arr_size, int size, int pos);
+void build_max_heap(int *array, int size);
+void bitonic_merge(int *array, size_t size,
+									 size_t low, size_t n, char ascending);
+void bitonic_sort_split(int *array, size_t size,
+												size_t low, size_t n, char ascending);
 void quick_sort_hoare(int *array, size_t size);
 typedef enum kind_e
 {
