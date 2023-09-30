@@ -2,11 +2,16 @@
 #include <string.h>
 #include <stdlib.h>
 #include "sort.h"
-
+/**
+ * bubble_sort - sorts a list using bubble method
+ * @array: array to sort
+ * @size: size of array
+ */
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, r;
 	int a, b, k = 0;
+
 	for (r = 0; r < size; r++)
 	{
 		for (i = 0; i < size - 1; i++)
